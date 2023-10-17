@@ -1,0 +1,36 @@
+
+.header__navigation{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 146px;
+    margin-right: 146px;
+}
+
+.header__navigation__menu{
+    display: flex;
+    gap: 40px;
+
+}
+
+.header__navigation__menu li{
+    list-style: none;
+}
+
+.header__navigation__menu li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-family: "SpaceMono-Regular";
+
+}
+
+.header__navigation__menu li a:hover{
+    font-family: "SpaceMono-Bold";
+}
+
+.header__navigation__image{
+    height: 14px;
+}

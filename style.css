@@ -1,10 +1,90 @@
 /*
-Theme Name: motaphoto
-Theme URI: https://www.motaphoto.com
-Author: Sandrine Giron
-Author URI:
-Description: Thème pour le client "motaphoto"
-Version: 1.0
-Tags: motaphoto, photographie
-Text Domain: motaphoto
-*/
+ Theme Name:  motaphoto
+ Theme URI: https://www.motaphoto.local
+ Author: motaphoto
+ Author URI: https://www.motaphoto.local
+ Version: 0.1
+ */
+.header__navigation {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 146px;
+  margin-right: 146px;
+}
+
+.header__navigation__menu {
+  display: flex;
+  gap: 40px;
+}
+
+.header__navigation__menu li {
+  list-style: none;
+}
+
+.header__navigation__menu li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  font-family: "SpaceMono-Regular";
+}
+
+.header__navigation__menu li a:hover {
+  font-family: "SpaceMono-Bold";
+}
+
+.header__navigation__image {
+  height: 14px;
+}
+
+.footer__navigation {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer__navigation__menu {
+  display: flex;
+  gap: 86px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__navigation__menu li {
+  list-style: none;
+}
+
+.footer__navigation__menu li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  font-family: "SpaceMono-Regular";
+}
+
+.footer__navigation__menu li a:hover {
+  font-family: "SpaceMono-Bold";
+}
+
+@font-face {
+  font-family: "SpaceMono-Regular";
+  font-weight: 400;
+  src: url("fonts/SpaceMono-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "SpaceMono-Bold";
+  font-weight: 700;
+  src: url("fonts/SpaceMono-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+body {
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

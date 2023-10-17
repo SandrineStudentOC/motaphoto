@@ -1,0 +1,29 @@
+.footer__navigation{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer__navigation__menu{
+    display: flex;
+    gap: 86px;
+    margin: 0;
+    padding: 0;
+}
+
+.footer__navigation__menu li{
+    list-style: none;
+}
+
+.footer__navigation__menu li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-family: "SpaceMono-Regular";
+}
+
+.footer__navigation__menu li a:hover{
+    font-family: "SpaceMono-Bold";
+}

@@ -8,9 +8,9 @@
  * @subpackage motaphoto
  * @since motaphoto 1.0
  */
+?>
 
-get_header();
+ <?php get_header(); ?>
 
 
-
-get_footer();
+ <?php get_footer(); ?>

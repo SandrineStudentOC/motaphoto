@@ -1,0 +1,30 @@
+/*
+ Theme Name:  motaphoto
+ Theme URI: https://www.motaphoto.local
+ Author: motaphoto
+ Author URI: https://www.motaphoto.local
+ Version: 0.1
+ */
+
+ @import "section-header.scss";
+ @import "section-footer.scss";
+
+@font-face{
+    font-family: 'SpaceMono-Regular';
+    font-weight: 400;
+    src: url('fonts/SpaceMono-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face{
+    font-family: 'SpaceMono-Bold';
+    font-weight: 700;
+    src: url('fonts/SpaceMono-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+ body{
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+ }
