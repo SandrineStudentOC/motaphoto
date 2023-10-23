@@ -6,6 +6,8 @@
  Version: 0.1
  */
 
+ @import "keyframes-mixins.scss";
+ @import "modale-contact.scss";
  @import "section-header.scss";
  @import "section-footer.scss";
 
@@ -20,6 +22,13 @@
     font-family: 'SpaceMono-Bold';
     font-weight: 700;
     src: url('fonts/SpaceMono-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face{
+    font-family: 'Poppins-Regular';
+    font-weight: 400;
+    src: url('fonts/Poppins-Regular.ttf') format('truetype');
     font-display: swap;
 }
 
