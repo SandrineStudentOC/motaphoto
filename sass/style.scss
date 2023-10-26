@@ -7,14 +7,22 @@
  */
 
  @import "keyframes-mixins.scss";
- @import "modale-contact.scss";
  @import "section-header.scss";
  @import "section-footer.scss";
+ @import "modale-contact.scss";
+ @import "single-photo.scss";
 
 @font-face{
     font-family: 'SpaceMono-Regular';
     font-weight: 400;
     src: url('fonts/SpaceMono-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face{
+    font-family: 'SpaceMono-Italic';
+    font-weight: 400;
+    src: url('fonts/SpaceMono-Italic.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -33,7 +41,8 @@
 }
 
  body{
-    width: 100%;
     max-width: 1440px;
     margin: auto;
- }
+    margin-left: 146px;
+    margin-right: 146px;
+}
