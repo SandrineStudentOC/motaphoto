@@ -60,7 +60,7 @@ var thumbnailContainer = document.querySelector(".article__bandeau__nav__thumbna
 // Récupère les 3 vignettes/images dans le HTML
 var imageActuelle = document.querySelector(".photo-actuelle");
 var imageSuivante = document.querySelector(".photo-suivante");
-var imagePrecedente = document.querySelector(".photo-précédente");
+var imagePrecedente = document.querySelector(".photo-precedente");
 
 // Fonction pour gérer l'affichage des images
 function toggleImages(showImage, hideImage1, hideImage2) {

@@ -50,7 +50,7 @@
                     <div class="article__bandeau__nav__thumbnail-container">
                         <img class="photo-actuelle" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>" alt="photo mignature">
                         <img class="photo-suivante" src="<?php echo get_the_post_thumbnail_url(get_next_post(), 'thumbnail'); ?>" alt="photo mignature">
-                        <img class="photo-précédente" src="<?php echo get_the_post_thumbnail_url(get_previous_post(), 'thumbnail'); ?>" alt="photo mignature">
+                        <img class="photo-precedente" src="<?php echo get_the_post_thumbnail_url(get_previous_post(), 'thumbnail'); ?>" alt="photo mignature">
                     </div>
                     <div class="article__bandeau__nav__arrow">
                         <?php previous_post_link('%link', '<img class="custom-previous-link" src="' .get_template_directory_uri(). '/img/arrow-left.png" >'); ?> 
@@ -65,7 +65,7 @@
         <div class="photo-apparentees">
             <p class="photo-apparentees__titre">Vous aimerez aussi</p>
             <div class="photo-apparentees__bloc">
-                <div class="photo-apparentees__bloc__thumbnail">
+                <div class="section-photo-block">
                     <?php 
                         // 0. Recupère dynamiquement la catégorie de l'article en cours
                         $categories = array_map(function ($term) {
@@ -93,23 +93,9 @@
 
                         // 3. On lance la boucle !
                         if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();?>
-                            <div class="bloc__image">
-                               <?php the_post_thumbnail('large',['class' => 'bloc__image__thumbnail']);?>
-                                <div class="bloc__image__eye">
-                                    <a href="<?php the_permalink(); ?>"><img class="picto-eye" src="<?php echo get_template_directory_uri(); ?>/img/icon_eye.svg" alt="picto oeil"></a>
-                                </div>
-                                <div class="bloc__image__fullscreen">
-                                    <a href="#"><img class="picto-fullscreen" src="<?php echo get_template_directory_uri(); ?>/img/icon_fullscreen.svg" alt="picto plein ecran"></a>
-                                </div>
-                                <div class="bloc__image__info">
-                                    <p><?php echo get_post_meta( get_the_ID(), 'reference', true );?></p>
-                                    <p><?php $categories = get_the_terms(get_the_ID(), 'categorie');
-                                        if ($categories && !is_wp_error($categories)) {
-                                            echo implode(', ', wp_list_pluck($categories, 'name'));
-                                        }?>
-                                    </p>
-                                </div>
-                            </div>
+
+                        <?php get_template_part( 'templates_part/photo_block' ); ?>
+
                         <?php endwhile;
                         endif;
 
@@ -117,7 +103,7 @@
                         wp_reset_postdata();
                         ?>
                 </div>
-                <button class="photo-apparentees__bloc__btn" type="button">Toutes les photos</button>
+                <button class="section-photo-btn" type="button">Toutes les photos</button>
                 </div>
             </div>
 

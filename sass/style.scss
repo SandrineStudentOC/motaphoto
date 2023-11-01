@@ -9,7 +9,9 @@
  @import "keyframes-mixins.scss";
  @import "section-header.scss";
  @import "section-footer.scss";
+ @import "section-photo-block.scss";
  @import "modale-contact.scss";
+ @import "page-accueil.scss";
  @import "single-photo.scss";
 
 @font-face{
@@ -33,6 +35,14 @@
     font-display: swap;
 }
 
+
+@font-face{
+    font-family: 'SpaceMono-BoldItalic';
+    font-weight: 700;
+    src: url('fonts/SpaceMono-BoldItalic.ttf') format('truetype');
+    font-display: swap;
+}
+
 @font-face{
     font-family: 'Poppins-Regular';
     font-weight: 400;
@@ -43,6 +53,4 @@
  body{
     max-width: 1440px;
     margin: auto;
-    margin-left: 146px;
-    margin-right: 146px;
 }
