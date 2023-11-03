@@ -9,7 +9,9 @@ function motaphoto_register_assets() {
     
     // Déclarer le JS
 	wp_enqueue_script( 'motaphoto', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0', true);
-    
+    if (is_single()) {wp_enqueue_script( 'single_photo', get_template_directory_uri() . '/js/single-photo.js', array( 'jquery' ), '1.0', true);}
+    wp_enqueue_script( 'custom-post-photos', get_template_directory_uri() . '/js/custom-post-photos.js', array( 'jquery' ), '1.0', true);
+
     // Déclarer le fichier style.css à la racine du thème
     wp_enqueue_style( 'motaphoto',get_template_directory_uri(). '/style.css' , array(), '1.0');
   	
@@ -29,4 +31,29 @@ function motaphoto_supports()
 
 add_action('after_setup_theme', 'motaphoto_supports'); // hook
 
+// FONCTION POUR CHARGER PLUS DE PHOTOS
 
+
+
+function weichie_load_more() {
+    $ajaxposts = new WP_Query([
+      'post_type' => 'photo',
+      'posts_per_page' => 12,
+      'paged' => $_POST['paged'],
+    ]);
+  
+    $response = '';
+  
+    if($ajaxposts->have_posts()) {
+        while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+        $response .= get_template_part( 'templates_part/photo_block' );
+      endwhile;
+    } else {
+      $response = '';
+    }
+  
+    echo $response;
+  exit;
+    }
+    add_action('wp_ajax_weichie_load_more', 'weichie_load_more');
+    add_action('wp_ajax_nopriv_weichie_load_more', 'weichie_load_more');

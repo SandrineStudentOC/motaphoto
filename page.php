@@ -41,30 +41,33 @@
     </div>
 
 	<div class="content">
-		<div class="section-photo-block">
+		
                     <?php 
                         // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
                         $args = array(
                             'post_type' => 'photo',
-                            'posts_per_page' => 12,                    
+                            'posts_per_page' => 12,
+                            'paged' => 1,            
                         );
 
                         // 2. On exécute la WP Query
-                        $my_query = new WP_Query( $args );
+                        $my_query = new WP_Query( $args );?>
 
-                        // 3. On lance la boucle !
-                        if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();?>
+                        
+                        <?php if( $my_query->have_posts() ) : // 3. On lance la boucle ! ?>
+                        
+                            <div class="section-photo-block">
 
-                            <?php get_template_part( 'templates_part/photo_block' ); ?>
+                        <?php while( $my_query->have_posts() ) : $my_query->the_post();
+
+                            get_template_part( 'templates_part/photo_block' ); 
 							
-                        <?php endwhile;
-                        endif;
-
-                        // 4. On réinitialise à la requête principale (important)
-                        wp_reset_postdata();
-                        ?>
-        </div>
-		<button class="section-photo-btn" type="button">Charger plus</button>
+                        endwhile; ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php wp_reset_postdata(); ?>
+        
+		                    <button class="section-photo-btn" id="load-more" type="button">Charger plus</button>
     </div>
 
 	<?php endwhile; endif; ?>

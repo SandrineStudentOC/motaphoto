@@ -78,6 +78,7 @@
                             'post__not_in' => [get_the_ID()],
                             'post_type' => 'photo',
                             'posts_per_page' => 2,
+                            'paged' => 1, //ajout pour ajax
                             'orderby' => 'rand',
                             'tax_query' => [
                                 [
@@ -85,6 +86,7 @@
                                     'terms' => $categories,
                                 ]
                             ]
+                            
                         
                         );
 
@@ -103,8 +105,9 @@
                         wp_reset_postdata();
                         ?>
                 </div>
-                <button class="section-photo-btn" type="button">Toutes les photos</button>
-                </div>
+                
+                <button class="section-photo-btn" type="button" >Toutes les photos</button>
+            
             </div>
 
 	<?php endwhile; endif; ?>
