@@ -31,11 +31,10 @@ function motaphoto_supports()
 
 add_action('after_setup_theme', 'motaphoto_supports'); // hook
 
+
 // FONCTION POUR CHARGER PLUS DE PHOTOS
 
-
-
-function weichie_load_more() {
+function motaphoto_load_more() {
     $ajaxposts = new WP_Query([
       'post_type' => 'photo',
       'posts_per_page' => 12,
@@ -43,17 +42,26 @@ function weichie_load_more() {
     ]);
   
     $response = '';
+    $max_pages = $ajaxposts->max_num_pages;
   
     if($ajaxposts->have_posts()) {
+        ob_start();
         while($ajaxposts->have_posts()) : $ajaxposts->the_post();
         $response .= get_template_part( 'templates_part/photo_block' );
       endwhile;
+      $output = ob_get_contents();
+    ob_end_clean();
     } else {
       $response = '';
     }
   
-    echo $response;
-  exit;
+    $result = [
+        'max' => $max_pages,
+        'html' => $output,
+      ];
+    
+      echo json_encode($result);
+      exit;
     }
-    add_action('wp_ajax_weichie_load_more', 'weichie_load_more');
-    add_action('wp_ajax_nopriv_weichie_load_more', 'weichie_load_more');
+    add_action('wp_ajax_motaphoto_load_more', 'motaphoto_load_more');
+    add_action('wp_ajax_nopriv_motaphoto_load_more', 'motaphoto_load_more');

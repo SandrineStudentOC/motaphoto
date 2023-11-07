@@ -134,6 +134,17 @@
   margin-right: 23px;
 }
 
+.bloc-picto {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.348);
+  opacity: 0;
+}
+.bloc-picto:hover {
+  opacity: 1;
+}
+
 .section-photo-btn {
   margin: auto;
   margin-bottom: 49px;
@@ -306,6 +317,15 @@
   width: 50%;
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  align-items: center;
+}
+.article__post__photo .bloc-picto .bloc__image__fullscreen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 18px;
+  margin-top: 11px;
 }
 .article__post__photo .attachment-post-thumbnail {
   object-fit: contain;
@@ -385,6 +405,10 @@
 .photo-apparentees__bloc {
   display: flex;
   flex-direction: column;
+}
+
+.home-btn {
+  margin: auto;
 }
 
 @font-face {

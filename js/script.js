@@ -30,3 +30,6 @@ window.onclick = function(event) {
 }
 
 
+// EFFET HOVER SUR LES IMAGES AVEC PICTOS
+
+

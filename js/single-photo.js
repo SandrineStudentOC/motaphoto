@@ -31,6 +31,7 @@ var imageActuelle = document.querySelector(".photo-actuelle");
 var imageSuivante = document.querySelector(".photo-suivante");
 var imagePrecedente = document.querySelector(".photo-precedente");
 
+
 // Fonction pour gérer l'affichage des images
 function toggleImages(showImage, hideImage1, hideImage2) {
     showImage.style.display = "flex";
@@ -39,20 +40,32 @@ function toggleImages(showImage, hideImage1, hideImage2) {
 }
 
 // Écoute l'événement "mouseover" sur le lien suivant
-linkNext.addEventListener("mouseover", function() {
+if (linkNext) {
+    linkNext.addEventListener("mouseover", function() {
     toggleImages(imageSuivante, imageActuelle, imagePrecedente);
-});
+    });
+}
 
 // Écoute l'événement "mouseover" sur le lien precedent
-linkPrevious.addEventListener("mouseover", function() {
+// Vérifie si linkPrevious existe
+if (linkPrevious) {
+    // Si linkPrevious existe, écoute l'événement "mouseover" sur le lien precedent
+    linkPrevious.addEventListener("mouseover", function() {
     toggleImages(imagePrecedente, imageActuelle, imageSuivante);
-});
+    });
+}
 
 // Écoutez l'événement "mouseout" pour les deux liens
-linkPrevious.addEventListener("mouseout", function() {
+// Vérifie si linkPrevious existe
+if (linkPrevious) {
+    // Si linkPrevious existe, écoute l'événement "mouseover" sur le lien precedent
+    linkPrevious.addEventListener("mouseout", function() {
     toggleImages(imageActuelle, imageSuivante, imagePrecedente);
-});
+    });
+}
 
-linkNext.addEventListener("mouseout", function() {
+if (linkNext) {
+    linkNext.addEventListener("mouseout", function() {
     toggleImages(imageActuelle, imageSuivante, imagePrecedente);
-});
+    });
+}

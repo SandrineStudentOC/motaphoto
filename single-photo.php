@@ -36,7 +36,12 @@
                 </div>
 
                 <div class="article__post__photo">
-                    <img class="attachment-post-thumbnail" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" alt="">
+                    <div class="bloc-picto">
+                        <div class="bloc__image__fullscreen">
+                            <a href="#"><img class="picto-fullscreen" src="<?php echo get_template_directory_uri(); ?>/img/icon_fullscreen.svg" alt="picto plein ecran"></a>
+                        </div>
+                    </div>
+                    <img class="attachment-post-thumbnail" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large',); ?>" alt="<?php the_title(); ?>">
                 </div>
 
             </div>
@@ -106,7 +111,9 @@
                         ?>
                 </div>
                 
-                <button class="section-photo-btn" type="button" >Toutes les photos</button>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home-btn">
+                    <button class="section-photo-btn" type="button" >Toutes les photos</button>
+                </a>
             
             </div>
 
