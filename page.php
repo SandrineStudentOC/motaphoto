@@ -41,7 +41,57 @@
     </div>
 
 	<div class="content">
-		
+
+        <div class="select">
+            <div class="select__taxonomy">       
+
+                <div class="select__taxonomy__categorie">
+                    <?php $categories = get_categories(array('taxonomy' => 'categorie')); ?>
+                    <div class="custom-select">
+                    <div class="select__header">Catégories</div>
+                    <div class="btn-arrow"><img  src="<?php echo get_template_directory_uri(); ?>/img/btn_arrow.svg" alt="bouton flèche"></div>
+
+                    <ul class="options">
+                        <li data-value="" class="option disabled">Catégories</li>
+
+                        <?php foreach ($categories as $category) : ?>
+                            <li data-value="<?= $category->slug; ?>" class="option"><?= $category->name; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+
+                </div>
+                </div>
+
+                <div class="select__taxonomy__formats">
+                    <?php $categories = get_categories(array('taxonomy' => 'format')); ?>
+                    <div class="custom-select">
+                    <div class="select__header">Formats</div>
+                    <div class="btn-arrow"><img  src="<?php echo get_template_directory_uri(); ?>/img/btn_arrow.svg" alt="bouton flèche"></div>
+                    <ul class="options">
+                    <li data-value="" class="option disabled">Formats</li>
+
+                        <?php foreach ($categories as $category) : ?>
+                            <li data-value="<?= $category->slug; ?>" class="option"><?= $category->name; ?></li>
+                        <?php endforeach; ?>
+                        </ul>
+                </div>
+                </div>
+            </div>  
+
+            <div class="select__date">
+                <div class="custom-select custom-select-date ">
+                    <div class="select__header">Trier par</div>
+                    <div class="btn-arrow"><img  src="<?php echo get_template_directory_uri(); ?>/img/btn_arrow.svg" alt="bouton flèche"></div>
+                    <ul class="options">
+                        <li data-value="" class="option disabled">Trier par</li>
+                        <li data-value="recent" class="option">des plus récentes aux plus anciennes</li>
+                        <li data-value="ancien" class="option">des plus anciennes au plus récentes</li>
+                    </ul>
+                </div>
+            </div>      
+
+        </div>
+                    
                     <?php 
                         // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
                         $args = array(

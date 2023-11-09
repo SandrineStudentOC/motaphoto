@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  Theme Name:  motaphoto
  Theme URI: https://www.motaphoto.local
@@ -83,7 +84,6 @@
 }
 
 .section-photo-block {
-  margin-top: 53px;
   margin-bottom: 53px;
   display: flex;
   flex-wrap: wrap;
@@ -93,8 +93,8 @@
 }
 .section-photo-block .bloc__image {
   width: 49%;
-  height: 495px;
   position: relative;
+  aspect-ratio: 1/1;
 }
 .section-photo-block .bloc__image__thumbnail {
   width: 100%;
@@ -136,10 +136,10 @@
 
 .bloc-picto {
   width: 100%;
-  height: 100%;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.348);
   opacity: 0;
+  aspect-ratio: 1/1;
 }
 .bloc-picto:hover {
   opacity: 1;
@@ -275,6 +275,91 @@
   margin-right: 146px;
 }
 
+.select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-bottom: 39px;
+  z-index: 1;
+}
+.select__taxonomy {
+  display: flex;
+  gap: 36px;
+}
+
+.custom-select {
+  position: relative;
+  width: 260px;
+  user-select: none;
+}
+
+.custom-select-date {
+  width: 300px;
+}
+
+.select__header {
+  padding: 11px 18px 11px 18px;
+  border: 1px solid #B8BBC2;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: "Poppins-Medium";
+  text-transform: uppercase;
+  font-size: 12px;
+  z-index: 1;
+  position: relative;
+}
+.select__header:active {
+  border: 1px solid #215AFF;
+}
+
+.options {
+  position: absolute;
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  overflow-y: auto;
+  width: 100%;
+  border-radius: 8px;
+  font-family: "Poppins-Medium";
+  font-size: 12px;
+}
+
+.option {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.option.disabled {
+  pointer-events: none;
+  color: #ccc;
+}
+
+.option:hover {
+  background-color: #E00000;
+  color: white;
+}
+
+.custom-select.open .options {
+  display: block;
+}
+
+.btn-arrow {
+  position: absolute;
+  top: 12px;
+  right: 0px;
+  text-align: right;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.arrow-rotated {
+  transform: rotate(180deg); /* Rotation de 180 degrés pour l'icône de flèche */
+}
+
 .article {
   height: 100dvh;
   margin-left: 146px;
@@ -401,6 +486,7 @@
   font-weight: 400;
   font-size: 18px;
   text-transform: uppercase;
+  margin-bottom: 52px;
 }
 .photo-apparentees__bloc {
   display: flex;
@@ -439,6 +525,12 @@
   font-family: "Poppins-Regular";
   font-weight: 400;
   src: url("fonts/Poppins-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  font-weight: 500;
+  src: url("fonts/Poppins-Medium.ttf") format("truetype");
   font-display: swap;
 }
 body {
