@@ -36,8 +36,8 @@
                 </div>
 
                 <div class="article__post__photo">
-                    <div class="bloc-picto">
-                        <div class="bloc__image__fullscreen">
+                    <div class="bloc-picto-single">
+                        <div class="bloc__image__fullscreen-single">
                             <a href="#"><img class="picto-fullscreen" src="<?php echo get_template_directory_uri(); ?>/img/icon_fullscreen.svg" alt="picto plein ecran"></a>
                         </div>
                     </div>

@@ -38,26 +38,16 @@ document.addEventListener('DOMContentLoaded', function() {
     customSelects.forEach(select => {
         const selectHeader = select.querySelector('.select__header');
         const options = select.querySelector('.options');
-        const btnArrow = select.querySelector('.btn-arrow');
 
         selectHeader.addEventListener('click', function() {
             // Fermer toutes les listes déroulantes
             customSelects.forEach(otherSelect => {
                 if (otherSelect !== select) {
                     otherSelect.classList.remove('open');
-                    // Réinitialisez l'icône des autres listes déroulantes
-                    otherSelect.querySelector('.btn-arrow').classList.remove('arrow-rotated');
                 }
             });
             // Ouvrir/fermer la liste déroulante actuelle
             select.classList.toggle('open');
-
-            // Ajoutez ou supprimez la classe arrow-rotated lorsque la liste est ouverte ou fermée
-            if (select.classList.contains('open')) {
-                btnArrow.classList.add('arrow-rotated');
-            } else {
-                btnArrow.classList.remove('arrow-rotated');
-            }
         });
 
         options.addEventListener('click', function(e) {
@@ -65,14 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const value = e.target.getAttribute('data-value');
                 selectHeader.textContent = e.target.textContent;
                 select.classList.remove('open');
-                btnArrow.classList.remove('arrow-rotated'); // Réinitialisez l'icône lorsque la liste est fermée
                 // Faites ce que vous voulez avec la valeur sélectionnée (par exemple, redirigez vers une autre page)
                 // window.location.href = '/votre-page?value=' + value;
             }
         });
     });
 });
-
 
 
 
