@@ -38,7 +38,15 @@
                 <div class="article__post__photo">
                     <div class="bloc-picto-single">
                         <div class="bloc__image__fullscreen-single">
-                            <a href="#"><img class="picto-fullscreen" src="<?php echo get_template_directory_uri(); ?>/img/icon_fullscreen.svg" alt="picto plein ecran"></a>
+                            <a href="#" class="picto-fullscreen"
+                            data-reference="<?php echo get_post_meta(get_the_ID(), 'reference', true); ?>"
+                            data-categorie="<?php
+                            $categories = get_the_terms(get_the_ID(), 'categorie');
+                            if ($categories && !is_wp_error($categories)) {
+                            echo esc_attr(implode(', ', wp_list_pluck($categories, 'name')));
+                            }?>"
+                            data-image-url="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'large')); ?>"
+                            ><img  src="<?php echo get_template_directory_uri(); ?>/img/icon_fullscreen.svg" alt="picto plein ecran"></a>
                         </div>
                     </div>
                     <img class="attachment-post-thumbnail" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large',); ?>" alt="<?php the_title(); ?>">

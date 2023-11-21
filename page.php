@@ -113,7 +113,7 @@
 
 <?php
 // Vérifie s'il y a plus de pages à charger
-  if ($projects->max_num_pages > 1) : ?>
+        if ($projects->max_num_pages > 1) : ?>
         <button class="section-photo-btn" id="load-more" type="button">Charger plus</button>
     </div>
     <?php endif; ?>
