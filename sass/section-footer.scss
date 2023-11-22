@@ -7,14 +7,22 @@
     height: 40px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 86px;
+    & p {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #000000;
+        font-size: 16px;
+        font-family: "SpaceMono-Regular";
+    }
 }
 
 .footer__navigation__menu{
     display: flex;
-    gap: 86px;
     margin: 0;
     padding: 0;
+    gap: 86px;
 }
 
 .footer__navigation__menu li{

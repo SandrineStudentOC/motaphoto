@@ -11,6 +11,9 @@
                     'menu_class' => 'footer__navigation__menu', // ma classe personnalisée 
                     ])
                 ?>
+                <p>
+                    tous droits réservés
+                </p>
                 
             </nav>
         </footer>

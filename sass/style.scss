@@ -61,4 +61,19 @@
  body{
     max-width: 1440px;
     margin: auto;
+    font-family: "Poppins-Regular";
+    font-size: 14px;
 }
+
+h1{
+    text-transform: uppercase;
+}
+
+.container_vie-privee{
+    margin: 100px;
+    &__p{
+        column-count: 2;
+        gap: 90px;
+        line-height: 2;
+    }
+    }

@@ -57,14 +57,22 @@
   height: 40px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 86px;
+}
+.footer__navigation p {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  font-family: "SpaceMono-Regular";
 }
 
 .footer__navigation__menu {
   display: flex;
-  gap: 86px;
   margin: 0;
   padding: 0;
+  gap: 86px;
 }
 
 .footer__navigation__menu li {
@@ -625,6 +633,21 @@
 body {
   max-width: 1440px;
   margin: auto;
+  font-family: "Poppins-Regular";
+  font-size: 14px;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.container_vie-privee {
+  margin: 100px;
+}
+.container_vie-privee__p {
+  column-count: 2;
+  gap: 90px;
+  line-height: 2;
 }
 
 /*# sourceMappingURL=style.css.map */
