@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// GESTION DU MENU BURGER
 
-
-
+icons.addEventListener("click", () => {
+    nav.classList.toggle("active");
+}); 
