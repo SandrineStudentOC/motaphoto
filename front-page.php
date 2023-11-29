@@ -108,7 +108,9 @@
                     get_template_part('templates_part/photo_block');
                 endwhile; ?>
             </div>
+
         <?php endif;
+
         wp_reset_postdata(); ?>
 
 <?php

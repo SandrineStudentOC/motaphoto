@@ -265,6 +265,7 @@
   background-color: rgba(0, 0, 0, 0.348);
   opacity: 0;
   aspect-ratio: 1/1;
+  transition: opacity 0.5s;
 }
 .bloc-picto:hover {
   opacity: 1;
@@ -465,6 +466,10 @@
   align-items: center;
   cursor: pointer;
 }
+.lightbox__next:hover,
+.lightbox__prev:hover {
+  font-family: "SpaceMono-Bold";
+}
 @media (max-width: 600px) {
   .lightbox__next,
   .lightbox__prev {
@@ -476,7 +481,17 @@
   background: url(/../motaphoto/wp-content/themes/motaphoto/img/arrow_lightbox_left.svg);
   right: auto;
   left: 50px;
-  text-indent: 35px;
+  text-indent: 45px;
+}
+.lightbox__prev:hover {
+  background: url(/../motaphoto/wp-content/themes/motaphoto/img/arrow_lightbox_left_hover.svg);
+  width: 36px;
+  text-indent: 55px;
+}
+
+.lightbox__next:hover {
+  background: url(/../motaphoto/wp-content/themes/motaphoto/img/arrow_lightbox_right_hover.svg);
+  width: 36px;
 }
 
 .hero {
@@ -498,7 +513,7 @@
   font-family: "SpaceMono-BoldItalic";
   font-weight: 700;
   text-transform: uppercase;
-  -webkit-text-stroke: 0.05em white;
+  -webkit-text-stroke: 0.04em white;
   -webkit-text-fill-color: transparent;
 }
 
@@ -593,6 +608,11 @@
 
 .custom-select.open .options {
   display: block;
+}
+@media (max-width: 1188px) {
+  .custom-select.open .options {
+    display: contents;
+  }
 }
 
 .btn-arrow {
@@ -700,6 +720,7 @@
   position: absolute;
   background-color: rgba(255, 255, 255, 0.348);
   opacity: 0;
+  transition: opacity 0.5s;
 }
 .article__post__photo .bloc-picto-single:hover {
   opacity: 1;

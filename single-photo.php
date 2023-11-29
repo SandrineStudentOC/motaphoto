@@ -12,7 +12,7 @@
 
  <?php get_header(); ?>
 
-    <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
+    <?php if( have_posts() ) : while( have_posts() ) : the_post(); // boucle qui parcourt et affiche le contenu d'une page, article...?>
 
         <article class="article">
             
@@ -26,8 +26,8 @@
                             echo implode(', ', wp_list_pluck($categories, 'name'));
                         }?>
                     </h2>
-                    <h2 class="article__post__meta__h2">Format : <?php $formats = get_the_terms(get_the_ID(), 'format');
-                        if ($formats && !is_wp_error($formats)) {
+                    <h2 class="article__post__meta__h2">Format : <?php $formats = get_the_terms(get_the_ID(), 'format'); // Récupère les termes de la taxonomie "format" associés à l'article en cours et les stocke dans la variable $formats.
+                        if ($formats && !is_wp_error($formats)) { //Vérifie si des termes ont été récupérés avec succès et s'il n'y a pas d'erreur WordPress.
                             echo implode(', ', wp_list_pluck($formats, 'name'));
                         }?>
                     </h2>
@@ -69,7 +69,7 @@
                         <?php previous_post_link('%link', '<img class="custom-previous-link" src="' .get_template_directory_uri(). '/img/arrow-left.png" >'); ?> 
                         <?php next_post_link('%link', '<img class="custom-next-link" src="' .get_template_directory_uri(). '/img/arrow-right.png">'); ?>
                     </div> 
-                    </div>   
+                      
                 </div>
             </div>
 
@@ -85,7 +85,6 @@
                             return $term->term_id;
                         }, get_the_terms(get_post(), 'categorie'));
 
-
                         // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
                         $args = array(
                             'post__not_in' => [get_the_ID()],
@@ -99,8 +98,6 @@
                                     'terms' => $categories,
                                 ]
                             ]
-                            
-                        
                         );
 
                         // 2. On exécute la WP Query

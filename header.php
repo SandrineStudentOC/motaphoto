@@ -11,16 +11,16 @@
 
  ?>
  <!doctype html>
- <html <?php language_attributes(); ?>>
+ <html <?php language_attributes(); //permet de spécifier la langue du document en fonction des paramètres de langue de WordPress ?>>
     <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>" />
+        <meta charset="<?php bloginfo( 'charset' ); // permet de définir l’encodage du site ?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <?php wp_head(); // Fonction qui permet ...  ?> 
+        <?php wp_head(); // Fonction qui permet de déclarer des elements comme le titre  ?> 
     </head>
 
-    <body <?php body_class(); ?>>
+    <body <?php body_class(); // ajoute des classes CSS au corps du document?>>
 
-    <?php wp_body_open(); ?>
+    <?php wp_body_open(); // permet à des extensions d’écrire du code au début du body ?>
 
     <header class="header">
         <nav  id="nav" class="header__navigation">

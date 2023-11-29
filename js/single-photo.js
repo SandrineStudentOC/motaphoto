@@ -1,10 +1,10 @@
 
 // Ouverture modale bouton contact dans page single-photo.php avec un gestionnaire d'évènement
 
-// Get the button that opens the modal
+// Récupére le bouton qui ouvre la fenêtre modale
 var btnContact = document.querySelector(".myBtn-contact-single");
 
-// When the user clicks the button, open the modal 
+// Lorsque l'utilisateur clique sur le bouton, ouvrir la fenêtre modale 
 btnContact.onclick = function() {
     modal.style.display = "flex";
 }
@@ -39,26 +39,21 @@ function toggleImages(showImage, hideImage1, hideImage2) {
     hideImage2.style.display = "none";
 }
 
-// Écoute l'événement "mouseover" sur le lien suivant
+// Écoute l'événement "mouseover" sur le lien suivant et précédent
 if (linkNext) {
     linkNext.addEventListener("mouseover", function() {
     toggleImages(imageSuivante, imageActuelle, imagePrecedente);
     });
 }
 
-// Écoute l'événement "mouseover" sur le lien precedent
-// Vérifie si linkPrevious existe
 if (linkPrevious) {
-    // Si linkPrevious existe, écoute l'événement "mouseover" sur le lien precedent
     linkPrevious.addEventListener("mouseover", function() {
     toggleImages(imagePrecedente, imageActuelle, imageSuivante);
     });
 }
 
-// Écoutez l'événement "mouseout" pour les deux liens
-// Vérifie si linkPrevious existe
+// Écoutez l'événement "mouseout" sur le lien suivant et précédent
 if (linkPrevious) {
-    // Si linkPrevious existe, écoute l'événement "mouseover" sur le lien precedent
     linkPrevious.addEventListener("mouseout", function() {
     toggleImages(imageActuelle, imageSuivante, imagePrecedente);
     });

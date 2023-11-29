@@ -16,7 +16,7 @@
         font-family: "SpaceMono-BoldItalic";
         font-weight: 700;
         text-transform: uppercase;
-        -webkit-text-stroke: 0.05em white;
+        -webkit-text-stroke: 0.04em white;
         -webkit-text-fill-color: transparent;
     }
 }
@@ -113,6 +113,9 @@
 
 .custom-select.open .options {
     display: block;
+    @media (max-width: 1188px){
+        display: contents;
+    }
 }
 
 .btn-arrow{

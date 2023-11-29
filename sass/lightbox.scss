@@ -75,6 +75,9 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    &:hover{
+        font-family: "SpaceMono-Bold";
+    }
     @media (max-width: 600px){
         display: none;
     }  
@@ -84,5 +87,17 @@
     background: url(/../motaphoto/wp-content/themes/motaphoto/img/arrow_lightbox_left.svg) ;
     right: auto;
     left: 50px;
-    text-indent: 35px;
+    text-indent: 45px;
+    &:hover{
+        background: url(/../motaphoto/wp-content/themes/motaphoto/img/arrow_lightbox_left_hover.svg) ;
+        width: 36px;
+        text-indent: 55px;
+    }
+}
+
+.lightbox__next{
+    &:hover{
+        background: url(/../motaphoto/wp-content/themes/motaphoto/img/arrow_lightbox_right_hover.svg) ;
+        width: 36px;
+    }
 }

@@ -1,24 +1,15 @@
-// Get the modal
+// Récupérer la fenêtre modale
 var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
+// Récupérer le bouton qui ouvre la fenêtre modale
 var btn = document.querySelector(".myBtn-contact");
 
-// Get the <span> element that closes the modal
-//var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
+// Lorsque l'utilisateur clique sur le bouton, ouvrir la fenêtre modale
 btn.onclick = function() {
     modal.style.display = "flex";
-
 }
 
-// When the user clicks on <span> (x), close the modal
-//span.onclick = function() {
-  //  modal.style.display = "none";
-//}
-
-// When the user clicks anywhere outside of the modal, close it
+// Lorsque l'utilisateur clique n'importe où en dehors de la fenêtre modale, la fermer
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.classList.add('fade-out');
@@ -38,25 +29,43 @@ document.addEventListener('DOMContentLoaded', function() {
     customSelects.forEach(select => {
         const selectHeader = select.querySelector('.select__header');
         const options = select.querySelector('.options');
+        const btnArrow = select.querySelector('.btn-arrow');
 
         selectHeader.addEventListener('click', function() {
             // Fermer toutes les listes déroulantes
             customSelects.forEach(otherSelect => {
                 if (otherSelect !== select) {
                     otherSelect.classList.remove('open');
+                    const otherBtnArrow = otherSelect.querySelector('.btn-arrow');
+                    if (otherBtnArrow) {
+                        otherBtnArrow.classList.remove('arrow-rotated');
+                    }
                 }
             });
-            // Ouvrir/fermer la liste déroulante actuelle
-            select.classList.toggle('open');
-        });
+
+                     // Ouvrir/fermer la liste déroulante actuelle
+                     const isOpen = select.classList.toggle('open');
+
+                     // Ajouter/retirer la classe .arrow-rotated au div btn-arrow en fonction de l'état du select
+                     if (btnArrow) {
+                         btnArrow.classList.toggle('arrow-rotated', isOpen);
+                     }
+                 });
+         
+                 select.addEventListener('mouseleave', function() {
+                      // Fermer le select lorsque le curseur quitte le select
+                    select.classList.remove('open');
+                     // Retirer la classe .arrow-rotated lorsque le curseur quitte le select
+                     if (btnArrow) {
+                         btnArrow.classList.remove('arrow-rotated');
+                     }
+                 });
 
         options.addEventListener('click', function(e) {
             if (e.target.classList.contains('option') && !e.target.classList.contains('disabled')) {
                 const value = e.target.getAttribute('data-value');
                 selectHeader.textContent = e.target.textContent;
                 select.classList.remove('open');
-                // Faites ce que vous voulez avec la valeur sélectionnée (par exemple, redirigez vers une autre page)
-                // window.location.href = '/votre-page?value=' + value;
             }
         });
     });

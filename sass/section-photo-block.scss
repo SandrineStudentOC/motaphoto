@@ -69,6 +69,7 @@
     background-color: rgba(0, 0, 0, 0.348);
     opacity: 0;
     aspect-ratio: 1/1;
+    transition: opacity 0.5s;
     &:hover{
         opacity: 1;
     }

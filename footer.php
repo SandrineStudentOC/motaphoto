@@ -17,11 +17,7 @@
                 
             </nav>
         </footer>
-        <?php wp_footer() ?>
-
-        
-
-
+        <?php wp_footer() // Permet d'afficher des scripts et styles ?>
 
    </body>
 </html>
