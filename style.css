@@ -389,7 +389,7 @@
 }
 
 .lightbox {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   justify-content: center;
   align-items: center;
@@ -404,7 +404,7 @@
   width: 23px;
   height: 23px;
   border: none;
-  background: url(/../motaphoto/wp-content/themes/motaphoto/img/btn_close.svg);
+  background: url(./img/btn_close.svg);
   position: fixed;
   top: 20px;
   right: 20px;
@@ -450,7 +450,7 @@
 .lightbox__next,
 .lightbox__prev {
   border: none;
-  background: url(/../motaphoto/wp-content/themes/motaphoto/img/arrow_lightbox.svg);
+  background: url(./img/arrow_lightbox.svg);
   width: 27px;
   height: 16px;
   position: fixed;
@@ -478,19 +478,19 @@
 }
 
 .lightbox__prev {
-  background: url(/../motaphoto/wp-content/themes/motaphoto/img/arrow_lightbox_left.svg);
+  background: url(./img/arrow_lightbox_left.svg);
   right: auto;
   left: 50px;
   text-indent: 45px;
 }
 .lightbox__prev:hover {
-  background: url(/../motaphoto/wp-content/themes/motaphoto/img/arrow_lightbox_left_hover.svg);
+  background: url(./img/arrow_lightbox_left_hover.svg);
   width: 36px;
   text-indent: 55px;
 }
 
 .lightbox__next:hover {
-  background: url(/../motaphoto/wp-content/themes/motaphoto/img/arrow_lightbox_right_hover.svg);
+  background: url(./img/arrow_lightbox_right_hover.svg);
   width: 36px;
 }
 

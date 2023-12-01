@@ -1,10 +1,10 @@
-// Get the button that opens the modal
+// Recupere le bouton qui ouvre la fenêtre de modale
 var btnOpenLightbox = document.querySelectorAll(".picto-fullscreen");
 
-// Get the button close the modal
+// Recupere le bouton qui ferme la fenêtre de modale
 var btnCloseLightbox = document.querySelector(".lightbox__close");
 
-// Get the lightbox
+// Recupere les elements de la lightbox
 var lightbox = document.getElementById('myLightbox');
 var lightboxReference = document.querySelector(".lightbox__container__info p:first-child");
 var lightboxCategorie = document.querySelector(".lightbox__container__info p:last-child");
@@ -31,12 +31,12 @@ jQuery(document).ready(function ($) {
         var categorie = $(this).data('categorie');
         var imageUrl = $(this).data('image-url');
 
-        // Update the information in the lightbox
+        // Met à jour les informations dans la lightbox
         $(".lightbox__container__info p:first-child").text(reference);
         $(".lightbox__container__info p:last-child").text(categorie);
         $(".lightbox__container img").attr('src', imageUrl);
 
-        // Display the lightbox
+        // Ouvre la lightbox
         $("#myLightbox").css('display', 'flex');
     });
 
@@ -66,7 +66,7 @@ jQuery(document).ready(function ($) {
         var categorie = $(currentImage).data('categorie');
         var imageUrl = $(currentImage).data('image-url');
 
-        // Mettez à jour les informations dans la lightbox
+        // Met à jour les informations dans la lightbox
         $(".lightbox__container__info p:first-child").text(reference);
         $(".lightbox__container__info p:last-child").text(categorie);
         $(".lightbox__container img").attr('src', imageUrl);

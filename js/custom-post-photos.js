@@ -100,7 +100,6 @@ function filterPhotos() {
                 $('#load-more').show();
             }
             
-
             // Affiche le nombre d'éléments/photos dans la console
             console.log('Nombre d\'éléments/photos récupérés :', $('.section-photo-block').find('.bloc__image').length);
         },
@@ -115,7 +114,6 @@ function filterPhotos() {
 
     });
 }
-
 
     // Code à exécuter lorsque le document est prêt
     $(document).ready(function () {
